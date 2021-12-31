@@ -1,6 +1,7 @@
 import homeImage from "../../assets/pixel-painting.jpg"
 import Navbar from "../navbar/navbar";
 import styled from 'styled-components';
+import { device } from '../../assets/device-sizes';
 
 const Home = () => {
     return (
@@ -12,16 +13,32 @@ const Home = () => {
 };
 
 export const HomeImage = styled.img`
-    max-width: 20%;
     border: 1px solid blue;
-    margin-left: 5em;
+    max-width: 300px;
+    margin-top: 10%;
+
+    @media ${device.laptop} { 
+        margin-top: 0%;
+        max-width: 500px;
+        max-height: 700px;
+    }
+
 `;
 
 export const HomeContainer = styled.div`
     border: 1px solid red;
     display: flex;
-    justify-content: space-between;
-    margin-top: 5em;
+    flex-direction: column-reverse;
+    align-items: center;
+    overflow: hidden;
+
+    @media ${device.laptop} { 
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2% 10% 2% 10%;
+        max-height: 100vh;
+        max-width: 100vw; 
+    }
 `;
 
 export default Home;
