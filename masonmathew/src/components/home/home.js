@@ -1,5 +1,5 @@
 import homeImage from "../../assets/pixel-painting.jpg"
-import Navbar from "../navbar/navbar";
+import Header from "../header/header";
 import styled from 'styled-components';
 import { device } from '../../assets/device-sizes';
 import Anime, { anime } from 'react-anime';
@@ -12,7 +12,7 @@ const Home = () => {
 
     return (
             <HomeContainer className="home">
-                <Navbar />
+                <Header />
                 <HomeImage src={homeImage} alt="Home Image" />
             </HomeContainer>
     );

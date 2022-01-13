@@ -42,6 +42,13 @@ input[type=checkbox] {
     transition: transform 250ms ease-in-out;
 }
 
+.mobileHeader{
+    display: flex;
+    justify-content: space-between;
+    min-width: 80vw;
+    margin-top: 10%;
+}
+
 .testNav {
     position: fixed;
     top: 0;
@@ -51,4 +58,43 @@ input[type=checkbox] {
     background-color: #fdff00;
     transform: translateX(-240px);
     transition: transform 250ms ease-in-out;
+}
+
+.mobile.navMenu {
+    align-items: start;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+
+    @media min-width: 1024px { 
+        display: none;
+    }
+}
+
+.mobile.navLink {
+    color: black;
+    display: flex;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+
+.nonMobile.navMenu {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.nonMobile.navLink {
+  color: black;
+  display: flex;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
 }

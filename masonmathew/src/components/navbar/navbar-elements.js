@@ -27,33 +27,6 @@ export const NavLogo = styled(Link)`
   }
 `;
 
-export const NavLink = styled(Link)`
-  color: black;
-  display: flex;
-  font-size: 2em;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
-  cursor: pointer;
-  &.active {
-    color:black;
-  }
-  &:hover {
-    color: black;
-  }
-`;
-
-export const NavMenu = styled.div`
-  display: none;
-
-  @media ${device.laptop} { 
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-`;
-
 export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
