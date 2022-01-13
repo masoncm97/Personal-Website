@@ -4,12 +4,15 @@ import {
     NavLink,
     NavMenu,
     NavLogo, 
-    Hamburger, 
-    MobileHeader
+    Hamburger
 } from "./navbar-elements";
 import hamburger from "../../assets/hamburger.svg"
 import { device } from '../../assets/device-sizes';
 import useMediaQuery from '../../hooks/useMediaQuery';
+import '../../styles.css'
+import { NavLink as Link } from "react-router-dom";
+import styled from 'styled-components';
+import MobileHeader from "./mobile-header"
 
 const Navbar = () => {
 
@@ -18,14 +21,8 @@ const Navbar = () => {
     return (
            <Nav>
             
-            <MobileHeader>
-                <NavLogo style={styles.logoStyle(!isLaptop)} to="/">
-                    Mason Mathew
-                </NavLogo>
-
-                <Hamburger src={hamburger} alt="Home Image" to="/" />
-            </MobileHeader>
-
+            <MobileHeader style={styles.logoStyle(!isLaptop)} />
+            
             <NavLogo style={styles.logoStyle(isLaptop)} to="/">
                     Mason Mathew
             </NavLogo>
@@ -54,4 +51,31 @@ const styles = {
     })
 };
 
+export const MobileNavLink = styled(Link)`
+    color: black;
+    display: flex;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+    text-align: left;
+    &.active {
+    color:black;
+    }
+    &:hover {
+    color: black;
+    }
+`;
+
+export const MobileNavMenu = styled.div`
+    align-items: start;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+
+        @media ${device.laptop} { 
+            display: none;
+        }
+`;
 export default Navbar;

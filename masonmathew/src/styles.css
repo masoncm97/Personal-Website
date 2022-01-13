@@ -1,0 +1,54 @@
+.hamburger {
+    width: 20%;
+    max-width: 35px;
+    transition: all 0.1s;
+    box-sizing: border-box;
+
+    @media min-width: 1024px { 
+      display: none;
+    }
+}
+
+input[type="checkbox"]:checked ~ .testNav {
+    transform: translateX(0);
+} 
+
+input[type=checkbox] {
+    transition: all 250ms;
+    box-sizing: border-box;
+    display: none;
+}
+
+.toggleHamburger {
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+
+#mobileNavbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: #fdff00;
+    transform: translateX(-240px);
+    transition: transform 250ms ease-in-out;
+}
+
+.testNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: #fdff00;
+    transform: translateX(-240px);
+    transition: transform 250ms ease-in-out;
+}

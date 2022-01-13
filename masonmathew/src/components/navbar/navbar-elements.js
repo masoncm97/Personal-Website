@@ -8,7 +8,6 @@ export const Nav = styled.nav`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border: 1px solid green;
       max-width: 300px;
       min-height: 700px;
       justify-content: space-between;
@@ -19,15 +18,19 @@ export const Nav = styled.nav`
 export const NavLogo = styled(Link)`
   cursor: pointer;
   color: black;
-  font-size: 2.5em;
+  font-size: 1.5em;
   text-decoration: none;
-  border: 1px solid blue;
+  text-align: right;
+  
+  @media ${device.laptop} {
+    font-size: 3em;
+  }
 `;
 
 export const NavLink = styled(Link)`
   color: black;
   display: flex;
-  font-size: 1.5em;
+  font-size: 2em;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
@@ -48,7 +51,6 @@ export const NavMenu = styled.div`
     align-items: end;
     justify-content: space-between;
     flex-direction: column;
-    border: 1px solid red;
   }
 `;
 
@@ -62,18 +64,11 @@ export const NavBtn = styled.nav`
   }
 `;
 
-export const Hamburger = styled.img`
+export const Hamburger = styled.label`
     width: 20%;
     max-width: 35px;
 
     @media ${device.laptop} { 
       display: none;
     }
-`;
-
-export const MobileHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  min-width: 80vw;
-  margin-top: 10%;
 `;

@@ -2,14 +2,26 @@ import homeImage from "../../assets/pixel-painting.jpg"
 import Navbar from "../navbar/navbar";
 import styled from 'styled-components';
 import { device } from '../../assets/device-sizes';
+import Anime, { anime } from 'react-anime';
+import useMediaQuery from '../../hooks/useMediaQuery';
+import '../../styles.css'
 
 const Home = () => {
+
+    const isLaptop= useMediaQuery(`${device.laptop}`);
+
     return (
-            <HomeContainer>
-                <HomeImage src={homeImage} alt="Home Image" />
+            <HomeContainer className="home">
                 <Navbar />
+                <HomeImage src={homeImage} alt="Home Image" />
             </HomeContainer>
     );
+};
+
+const styles = {
+    logoStyle: isLaptop => ({
+        display: isLaptop ? 'flex' : 'none'
+    })
 };
 
 export const HomeImage = styled.img`
@@ -28,12 +40,12 @@ export const HomeImage = styled.img`
 export const HomeContainer = styled.div`
     border: 1px solid red;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: center;
     overflow: hidden;
 
     @media ${device.laptop} { 
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: space-between;
         padding: 2% 10% 2% 10%;
         max-height: 100vh;
