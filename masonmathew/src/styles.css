@@ -61,7 +61,7 @@ input[type=checkbox] {
 }
 
 .mobile.navMenu {
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
     display: flex;
     flex-direction: column;
@@ -84,7 +84,7 @@ input[type=checkbox] {
 
 .nonMobile.navMenu {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
     flex-direction: column;
 }

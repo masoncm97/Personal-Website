@@ -40,7 +40,7 @@ const MobileHeader = () => {
                 </NavLogo>
                 
                 <input type="checkbox" id="hamburger-checkbox" className="hamburger-checkbox toggleHamburger" />
-                <label className="hamburger" htmlFor="hamburger-checkbox"><img src={hamburger}/></label>
+                <label className="hamburger" htmlFor="hamburger-checkbox"><img src={hamburger} alt="hamburger"/></label>
                 
                 <div style={styles.logoStyle(!isLaptop)} className="testNav">
                     <Navbar />

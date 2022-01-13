@@ -2,13 +2,9 @@ import homeImage from "../../assets/pixel-painting.jpg"
 import Header from "../header/header";
 import styled from 'styled-components';
 import { device } from '../../assets/device-sizes';
-import Anime, { anime } from 'react-anime';
-import useMediaQuery from '../../hooks/useMediaQuery';
 import '../../styles.css'
 
 const Home = () => {
-
-    const isLaptop= useMediaQuery(`${device.laptop}`);
 
     return (
             <HomeContainer className="home">
@@ -16,12 +12,6 @@ const Home = () => {
                 <HomeImage src={homeImage} alt="Home Image" />
             </HomeContainer>
     );
-};
-
-const styles = {
-    logoStyle: isLaptop => ({
-        display: isLaptop ? 'flex' : 'none'
-    })
 };
 
 export const HomeImage = styled.img`

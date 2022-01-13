@@ -1,12 +1,4 @@
 import useMediaQuery from '../../hooks/useMediaQuery';
-import {
-    Nav,
-    NavLink,
-    NavMenu,
-    NavLogo, 
-    Hamburger
-} from "./navbar-elements";
-import hamburger from "../../assets/hamburger.svg"
 import { device } from '../../assets/device-sizes';
 import '../../styles.css'
 
