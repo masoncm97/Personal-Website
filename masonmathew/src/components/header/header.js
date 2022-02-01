@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import {
     Nav,
     NavLogo, 
@@ -15,13 +15,13 @@ const Header = () => {
 
     return (
            <Nav>   
-                <MobileHeader style={styles.logoStyle(!isLaptop)} />
+                <MobileHeader style={styles.toggleElementA(!isLaptop)} />
                 
-                <NavLogo style={styles.logoStyle(isLaptop)} to="/">
+                <NavLogo style={styles.toggleElementA(isLaptop)} to="/">
                         Mason Mathew
                 </NavLogo>
 
-                <div style={styles.logoStyle(isLaptop)}>
+                <div style={styles.toggleElementA(isLaptop)}>
                     <Navbar/>
                 </div>
            </Nav> 
@@ -31,9 +31,14 @@ const Header = () => {
 const MobileHeader = () => {
 
     const isLaptop= useMediaQuery(`${device.laptop}`);
+    const [navbarActivated, setNavbarState] = useState(true);
+    
+    const toggleNavbar = (navbarActivated) => {
+        setNavbarState(navbarActivated)
+    };
 
     return (      
-            <div style={styles.logoStyle(!isLaptop)} className="mobileHeader">
+            <div style={styles.toggleElementA(!isLaptop)} className="mobileHeader">
                 
                 <NavLogo to="/">
                     Mason Mathew
@@ -42,17 +47,22 @@ const MobileHeader = () => {
                 <input type="checkbox" id="hamburger-checkbox" className="hamburger-checkbox toggleHamburger" />
                 <label className="hamburger" htmlFor="hamburger-checkbox"><img src={hamburger} alt="hamburger"/></label>
                 
-                <div style={styles.logoStyle(!isLaptop)} className="testNav">
-                    <Navbar />
+                <div style={styles.toggleElementB(!isLaptop, navbarActivated)} className="testNav">
+                    <Navbar onClick={toggleNavbar}/>
                 </div>
             </div>
     );
 };
 
 const styles = {
-    logoStyle: isLaptop => ({
-        display: isLaptop ? 'flex' : 'none'
+    toggleElementA: x1 => ({
+        display: x1 ? 'flex' : 'none'
+    }),
+    toggleElementB: (x1, x2)  => ({
+        display: x1 && x2 ? 'flex' : 'none'
     })
 };
+
+
 
 export default Header;

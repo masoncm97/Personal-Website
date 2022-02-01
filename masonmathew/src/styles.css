@@ -19,6 +19,14 @@ input[type=checkbox] {
     display: none;
 }
 
+.navLink:active {
+    transition: all 250ms;
+}
+
+.button {
+    transition: background-color 0.5s ease-out;
+}
+
 .toggleHamburger {
     cursor: pointer;
     position: absolute;
@@ -60,6 +68,15 @@ input[type=checkbox] {
     transition: transform 250ms ease-in-out;
 }
 
+.testNavOuter {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    z-index: 1;
+}
+
 .mobile.navMenu {
     align-items: flex-start;
     justify-content: space-between;
@@ -97,4 +114,12 @@ input[type=checkbox] {
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+}
+
+.visible {
+    display: flex;
+}
+
+.hidden {
+    display: none;
 }

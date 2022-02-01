@@ -1,16 +1,19 @@
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { device } from '../../assets/device-sizes';
+import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 import '../../styles.css'
 
-const Navbar = () => {
+const Navbar = ({onClick}) => {
 
     const mediaSelector= useMediaQuery(`${device.laptop}`) ? 'nonMobile' : 'mobile';
+    const [navbarActivated, setNavbarActivated] = useState(false);
 
     return (
             <div className={`${mediaSelector} navMenu`} >
-                <div className={`${mediaSelector} navLink`} to="/">
+                <Link className={`${mediaSelector} navLink`} to="/paintings" onClick={() => onClick(false)}>
                     Paintings
-                </div>
+                </Link>
                 <div className={`${mediaSelector} navLink`} to="/about">
                     Analog
                 </div>

@@ -7,10 +7,7 @@ import '../../styles.css'
 const Home = () => {
 
     return (
-            <HomeContainer className="home">
-                <Header />
-                <HomeImage src={homeImage} alt="Home Image" />
-            </HomeContainer>
+        <HomeImage src={homeImage} alt="Home Image" />
     );
 };
 
@@ -25,22 +22,6 @@ export const HomeImage = styled.img`
         max-height: 700px;
     }
 
-`;
-
-export const HomeContainer = styled.div`
-    border: 1px solid red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-
-    @media ${device.laptop} { 
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        padding: 2% 10% 2% 10%;
-        max-height: 100vh;
-        max-width: 100vw; 
-    }
 `;
 
 export default Home;
