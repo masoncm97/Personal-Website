@@ -1,4 +1,3 @@
-import Header from "../header/header";
 import styled from 'styled-components';
 import { device } from '../../assets/device-sizes';
 import '../../styles.css'

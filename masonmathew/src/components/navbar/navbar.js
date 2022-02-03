@@ -1,7 +1,7 @@
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { device } from '../../assets/device-sizes';
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
+import React from 'react';
 import '../../styles.css'
 
 const Navbar = ({onClick}) => {
