@@ -11,16 +11,6 @@ const ImageScroll = () => {
     const [current, setCurrent] = useState(0);
     const length = data.length;
 
-    const nextSlide = () => {
-        console.log("next");
-        setCurrent(current === length - 1 ? 0 : current + 1);
-    };
-
-    const prevSlide = () => {
-        console.log("prev");
-        setCurrent(current === 0 ? length - 1 : current - 1);
-    }
-
     const slide = (next) => {
         if (next) {
             setCurrent(current === length - 1 ? 0 : current + 1);

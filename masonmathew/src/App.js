@@ -2,21 +2,14 @@ import './App.css';
 import Home from "./components/home/home"
 import Paintings from "./components/image-scroll"
 import {
-  Link,
   Routes,
   Route,
-  Redirect,
-  useLocation,
-  useParams
 } from 'react-router-dom'
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import Header from "./components/header/header";
 import { device } from './assets/device-sizes';
 import styled from 'styled-components';
 
 function App() {
-
-  const location = useLocation()
 
   return (
     <AppContainer>
