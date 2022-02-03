@@ -1,6 +1,6 @@
 import './App.css';
 import Home from "./components/home/home"
-import Paintings from "./components/paintings"
+import Paintings from "./components/image-scroll"
 import {
   Link,
   Routes,

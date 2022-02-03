@@ -2,7 +2,7 @@ const Paintings = () => {
 
     return (
             <div>
-                Paintings works!
+                paintings works!
             </div> 
     );
 };

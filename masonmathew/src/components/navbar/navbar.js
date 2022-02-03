@@ -7,7 +7,6 @@ import '../../styles.css'
 const Navbar = ({onClick}) => {
 
     const mediaSelector= useMediaQuery(`${device.laptop}`) ? 'nonMobile' : 'mobile';
-    const [navbarActivated, setNavbarActivated] = useState(false);
 
     return (
             <div className={`${mediaSelector} navMenu`} >

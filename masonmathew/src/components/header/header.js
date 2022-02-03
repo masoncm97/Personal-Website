@@ -15,13 +15,13 @@ const Header = () => {
 
     return (
            <Nav>   
-                <MobileHeader style={styles.toggleElementA(!isLaptop)} />
+                <MobileHeader style={styles.toggleElement(!isLaptop)} />
                 
-                <NavLogo style={styles.toggleElementA(isLaptop)} to="/">
+                <NavLogo style={styles.toggleElement(isLaptop)} to="/">
                         Mason Mathew
                 </NavLogo>
 
-                <div style={styles.toggleElementA(isLaptop)}>
+                <div style={styles.toggleElement(isLaptop)}>
                     <Navbar/>
                 </div>
            </Nav> 
@@ -35,19 +35,20 @@ const MobileHeader = () => {
     
     const toggleNavbar = (navbarActivated) => {
         setNavbarState(navbarActivated)
+        console.log("lit");
     };
 
     return (      
-            <div style={styles.toggleElementA(!isLaptop)} className="mobileHeader">
+            <div style={styles.toggleElement(!isLaptop)} className="mobileHeader">
                 
                 <NavLogo to="/">
                     Mason Mathew
                 </NavLogo>
                 
-                <input type="checkbox" id="hamburger-checkbox" className="hamburger-checkbox toggleHamburger" />
+                <input type="checkbox" id="hamburger-checkbox" className="hamburger-checkbox toggleHamburger" onClick={() => toggleNavbar(true)}/>
                 <label className="hamburger" htmlFor="hamburger-checkbox"><img src={hamburger} alt="hamburger"/></label>
                 
-                <div style={styles.toggleElementB(!isLaptop, navbarActivated)} className="testNav">
+                <div style={styles.toggleElement(!isLaptop, navbarActivated)} className="testNav">
                     <Navbar onClick={toggleNavbar}/>
                 </div>
             </div>
@@ -55,12 +56,9 @@ const MobileHeader = () => {
 };
 
 const styles = {
-    toggleElementA: x1 => ({
-        display: x1 ? 'flex' : 'none'
-    }),
-    toggleElementB: (x1, x2)  => ({
-        display: x1 && x2 ? 'flex' : 'none'
-    })
+    toggleElement: (x1, x2)  => ( (x2 === undefined) ?
+    { display: x1 ? 'flex' : 'none'} : 
+    { display: x1 && x2 ? 'flex' : 'none' })
 };
 
 

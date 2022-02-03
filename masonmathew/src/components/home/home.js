@@ -1,4 +1,3 @@
-import homeImage from "../../assets/pixel-painting.jpg"
 import Header from "../header/header";
 import styled from 'styled-components';
 import { device } from '../../assets/device-sizes';
@@ -7,7 +6,7 @@ import '../../styles.css'
 const Home = () => {
 
     return (
-        <HomeImage src={homeImage} alt="Home Image" />
+        <HomeImage src={"/paintings/pixel-painting.jpg"} alt="Home Image" />
     );
 };
 
