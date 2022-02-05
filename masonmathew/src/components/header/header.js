@@ -35,7 +35,6 @@ const MobileHeader = () => {
     
     const toggleNavbar = (navbarActivated) => {
         setNavbarState(navbarActivated)
-        console.log("lit");
     };
 
     return (      

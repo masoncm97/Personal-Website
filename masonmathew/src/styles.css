@@ -63,6 +63,7 @@ input[type=checkbox] {
     left: 0;
     width: 240px;
     height: 100vh;
+    z-index: 99;
     background-color: #fdff00;
     transform: translateX(-240px);
     transition: transform 250ms ease-in-out;
@@ -74,7 +75,7 @@ input[type=checkbox] {
     left: 0;
     width: 240px;
     height: 100vh;
-    z-index: 1;
+    z-index: 99;
 }
 
 .mobile.navMenu {
@@ -141,3 +142,12 @@ input[type=checkbox] {
     justify-content: center;
     align-items: center;
   }
+
+.image-scroll-container {
+    margin-top: 15%;
+    z-index: 1;
+}
+
+.description-container {
+    padding-bottom: 5px;
+}

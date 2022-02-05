@@ -27,12 +27,12 @@ const ImageScroll = () => {
     }) 
 
     return (
-        <div {...handlers}>
+        <div className="image-scroll-container" {...handlers}>
             {data.map((entry, index) => 
                 {
                     return <div className={index === current ? 'slide active' : 'slide'} key={index}>
                         { index === current && (
-                            <div>
+                            <div className="description-container">
                                 <Image src={entry.url} alt="Home Image" loading="lazy"/>
                                 <ImageDetail>{entry.name}</ImageDetail>
                                 <ImageDetail>{entry.description}</ImageDetail>
@@ -46,8 +46,7 @@ const ImageScroll = () => {
 
 export const Image = styled.img`
     border: 1px solid blue;
-    max-width: 300px;
-    margin-top: 10%;
+    max-width: 260px;
 
     @media ${device.laptop} { 
         margin-top: 0%;

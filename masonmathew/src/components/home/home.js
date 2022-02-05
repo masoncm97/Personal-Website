@@ -10,7 +10,6 @@ const Home = () => {
 };
 
 export const HomeImage = styled.img`
-    border: 1px solid blue;
     max-width: 300px;
     margin-top: 10%;
 
