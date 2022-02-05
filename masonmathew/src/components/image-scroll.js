@@ -45,7 +45,6 @@ const ImageScroll = () => {
 };
 
 export const Image = styled.img`
-    border: 1px solid blue;
     max-width: 260px;
 
     @media ${device.laptop} { 
