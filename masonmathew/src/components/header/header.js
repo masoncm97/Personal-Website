@@ -33,9 +33,6 @@ const MobileHeader = () => {
     const isLaptop= useMediaQuery(`${device.laptop}`);
     const [navbarActivated, setNavbarState] = useState(true);
     
-    const toggleNavbar = (navbarActivated) => {
-        setNavbarState(navbarActivated)
-    };
 
     return (      
             <div style={styles.toggleElement(!isLaptop)} className="mobileHeader">
@@ -44,11 +41,11 @@ const MobileHeader = () => {
                     Mason Mathew
                 </NavLogo>
                 
-                <input type="checkbox" id="hamburger-checkbox" className="hamburger-checkbox toggleHamburger" onClick={() => toggleNavbar(true)}/>
+                <input type="checkbox" id="hamburger-checkbox" className="hamburger-checkbox toggleHamburger" onClick={() => setNavbarState(true)}/>
                 <label className="hamburger" htmlFor="hamburger-checkbox"><img src={hamburger} alt="hamburger"/></label>
                 
                 <div style={styles.toggleElement(!isLaptop, navbarActivated)} className="testNav">
-                    <Navbar onClick={toggleNavbar}/>
+                    <Navbar onClick={() => setNavbarState(navbarActivated)}/>
                 </div>
             </div>
     );

@@ -149,5 +149,16 @@ input[type=checkbox] {
 }
 
 .description-container {
-    padding-bottom: 5px;
+    margin-bottom: 20px;
+    display: relative;
+    border: 1px solid green;
+}
+
+.image {
+    z-index: 1;
+    position: relative;
+}
+.description {
+    z-index: -1;
+    position: relative;
 }

@@ -4,6 +4,7 @@ import Paintings from "./components/image-scroll"
 import {
   Routes,
   Route,
+  BrowserRouter,
 } from 'react-router-dom'
 import Header from "./components/header/header";
 import { device } from './assets/device-sizes';
@@ -12,13 +13,13 @@ import styled from 'styled-components';
 function App() {
 
   return (
-    <AppContainer>
-      <Header />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/paintings" element={<Paintings />} />
-          </Routes> 
-    </AppContainer> 
+      <AppContainer>
+        <Header />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/paintings" element={<Paintings />} />
+            </Routes> 
+      </AppContainer> 
   );
 }
 

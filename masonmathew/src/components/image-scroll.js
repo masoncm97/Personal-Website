@@ -3,6 +3,7 @@ import { Data as data } from "../assets/paintings/data";
 import styled from 'styled-components';
 import { device } from '../assets/device-sizes';
 import { useSwipeable } from 'react-swipeable';
+import { Image } from './image';
 import '../styles.css'
 
 
@@ -27,24 +28,18 @@ const ImageScroll = () => {
     }) 
 
     return (
-        <div className="image-scroll-container" {...handlers}>
+        <div>
             {data.map((entry, index) => 
                 {
-                    return <div className={index === current ? 'slide active' : 'slide'} key={index}>
-                        { index === current && (
-                            <div className="description-container">
-                                <Image src={entry.url} alt="Home Image" loading="lazy"/>
-                                <ImageDetail>{entry.name}</ImageDetail>
-                                <ImageDetail>{entry.description}</ImageDetail>
-                            </div>
-                        ) }
+                    return <div key={index}>
+                        <Image entry={entry} flipped={false}></Image>
                     </div> 
                 })}
         </div>
     );
 };
 
-export const Image = styled.img`
+export const Image1 = styled.img`
     max-width: 260px;
 
     @media ${device.laptop} { 
