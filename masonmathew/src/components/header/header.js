@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
+import styles from '../../common/functions'
 import {
     Nav,
     NavLogo, 
 } from "../navbar/navbar-elements";
 import hamburger from "../../assets/hamburger.svg"
-import { device } from '../../assets/device-sizes';
-import useMediaQuery from '../../hooks/useMediaQuery';
+import { device } from '../../common/device-sizes';
+import useMediaQuery from '../../common/hooks/useMediaQuery';
 import '../../styles.css'
 import Navbar from '../navbar/navbar'
+    
 
 const Header = () => {
 
     const isLaptop= useMediaQuery(`${device.laptop}`);
 
     return (
+        <div className={ isLaptop ?  "nonmobile-header" : "" }>
            <Nav>   
                 <MobileHeader style={styles.toggleElement(!isLaptop)} />
                 
@@ -25,6 +28,7 @@ const Header = () => {
                     <Navbar/>
                 </div>
            </Nav> 
+        </div>
     );
 };
 
@@ -50,13 +54,6 @@ const MobileHeader = () => {
             </div>
     );
 };
-
-const styles = {
-    toggleElement: (x1, x2)  => ( (x2 === undefined) ?
-    { display: x1 ? 'flex' : 'none'} : 
-    { display: x1 && x2 ? 'flex' : 'none' })
-};
-
 
 
 export default Header;

@@ -9,6 +9,11 @@
     }
 }
 
+.nonmobile-header {
+    position: fixed;
+    right: 0;
+}
+
 input[type="checkbox"]:checked ~ .testNav {
     transform: translateX(0);
 } 
@@ -90,7 +95,7 @@ input[type=checkbox] {
 }
 
 .mobile.navLink {
-    color: black;
+    color: #FF0000;
     display: flex;
     font-size: 2em;
     text-decoration: none;
@@ -105,12 +110,13 @@ input[type=checkbox] {
     align-items: flex-end;
     justify-content: space-between;
     flex-direction: column;
+    display: fixed;
 }
 
 .nonMobile.navLink {
-  color: black;
+  color: #FF0000;
   display: flex;
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
@@ -130,11 +136,11 @@ input[type=checkbox] {
     transition-duration: 1s ease;
 }
   
-  .slide.active {
-    opacity: 1;
-    transition-duration: 2s;
-    transform: scale(1.08);
-  }
+.slide.active {
+opacity: 1;
+transition-duration: 2s;
+transform: scale(1.08);
+}
 
 .slider {
     position: relative;
@@ -142,23 +148,3 @@ input[type=checkbox] {
     justify-content: center;
     align-items: center;
   }
-
-.image-scroll-container {
-    margin-top: 15%;
-    z-index: 1;
-}
-
-.description-container {
-    margin-bottom: 20px;
-    display: relative;
-    border: 1px solid green;
-}
-
-.image {
-    z-index: 1;
-    position: relative;
-}
-.description {
-    z-index: -1;
-    position: relative;
-}

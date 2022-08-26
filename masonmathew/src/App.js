@@ -1,13 +1,12 @@
 import './App.css';
 import Home from "./components/home/home"
-import Paintings from "./components/image-scroll"
+import Paintings from "./components/random-image/random-image-container"
 import {
   Routes,
   Route,
   BrowserRouter,
 } from 'react-router-dom'
 import Header from "./components/header/header";
-import { device } from './assets/device-sizes';
 import styled from 'styled-components';
 
 function App() {
@@ -29,14 +28,6 @@ export const AppContainer = styled.div`
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-
-    @media ${device.laptop} { 
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        padding: 2% 10% 2% 10%;
-        max-height: 100vh;
-        max-width: 100vw; 
-    }
 `;
 
 export default App;

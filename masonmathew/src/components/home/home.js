@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../../assets/device-sizes';
+import { device } from '../../common/device-sizes';
 import '../../styles.css'
 
 const Home = () => {

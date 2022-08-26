@@ -1,6 +1,7 @@
 import { NavLink as Link } from "react-router-dom";
 import styled from 'styled-components';
-import { device } from '../../assets/device-sizes';
+import { device } from '../../common/device-sizes';
+
 
 export const Nav = styled.nav`
 
@@ -17,13 +18,14 @@ export const Nav = styled.nav`
 
 export const NavLogo = styled(Link)`
   cursor: pointer;
-  color: black;
+  color: #FF0000;
   font-size: 1.5em;
   text-decoration: none;
   text-align: right;
-  
   @media ${device.laptop} {
-    font-size: 3em;
+    font-size: 4.5em;
+    margin: 10% 10% 0% 0%;
+
   }
 `;
 

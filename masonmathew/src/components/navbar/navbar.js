@@ -1,5 +1,5 @@
-import useMediaQuery from '../../hooks/useMediaQuery';
-import { device } from '../../assets/device-sizes';
+import useMediaQuery from '../../common/hooks/useMediaQuery';
+import { device } from '../../common/device-sizes';
 import { Link } from "react-router-dom";
 import React from 'react';
 import '../../styles.css'
