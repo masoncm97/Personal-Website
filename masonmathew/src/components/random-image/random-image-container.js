@@ -14,34 +14,50 @@ const ImageScroll = () => {
     var listOfImages = [];
     const [images, setImages] = useState([]);
     const [boxes, setBoxes] = useState(null);
+    const [imgsLoaded, setImgsLoaded] = useState(false)
 
     let importAll = (r) => {
         return r.keys().map(r);
     };
-    
-    useEffect(() => {   
-        const data = importAll(require.context('../../photos/', false, /\.(JPG)$/));     
-        setImages(data);
-    }, []);
 
-      useEffect(() => {   
+    useEffect(() => {
+        const loadImage = path =>
+            new Promise((resolve, reject) => {
+                const image = new Image();
+                image.onload = () => resolve({ path, status: 'ok' })
+                image.onerror = () => reject({ path, status: 'error' })
+                image.src = path;
+            });
+
+        const data = importAll(require.context('../../photos/', false, /\.(JPG)$/));
+        setImages(data);
+        console.log("hey");
+
+        Promise.all(images.map(loadImage))
+            .then(() => setImgsLoaded(true))
+            .catch(err => console.log("Failed to load images", err))
+    }, [])
+
+    useEffect(() => {
+        console.log("reposition");
+        setImgsLoaded(true)
         let boxes = document.querySelectorAll('.random-image');
-        setBoxes(boxes);   
+        setBoxes(boxes);
         reposition(boxes);
         setInterval(() => reposition(boxes), 2500);
     }, [images]);
 
 
     let randInt = (min, max) => Math.floor(min + Math.random() * (max - min));
-    const isLaptop= useMediaQuery(`${device.laptop}`);
-    
+    const isLaptop = useMediaQuery(`${device.laptop}`);
+
 
     return (
         <div className={isLaptop ? "random-image-container" : ""}>
-            {boxes!= null && images.map(
+            {boxes != null && imgsLoaded && images.map(
                 (image, index) => <Image key={index} className="random-image image" src={image} loading="lazy"></Image>
-               )
-            } 
+            )
+            }
         </div>
     );
 };

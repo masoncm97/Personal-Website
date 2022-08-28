@@ -38,6 +38,8 @@ export const boxCollides = (box, boxes, parBound, sep) => {
 
 export const getBound = (elem, isRoot) => {
   let { width, height } = elem.getBoundingClientRect();
+  console.log(elem);
+
   return {
     x: isRoot ? width >> 1 : (parseInt(elem.style.left) || 0),
     y: isRoot ? height >> 1 : (parseInt(elem.style.top) || 0),
@@ -49,14 +51,14 @@ export const getBound = (elem, isRoot) => {
 };
 
 export const reposition = (boxes, { sep = 50, randOff = 10 } = global.params) => {
-
+  console.log(boxes.length != 0);
   if (boxes != null && boxes.length != 0) {
+    console.log("hey 2");
     boxes = [...boxes].sort(function () { return Math.random() - 0.5; });
 
-    let parBound = getBound(boxes[0].parentNode, true);
-
-    console.log(parBound);
     console.log(boxes[0]);
+    console.log(boxes[0].parentNode);
+    let parBound = getBound(boxes[0].parentNode, true);
 
     // Consider the 1st box "ready"; position it in the center
     Object.assign(boxes[0].style, { left: `${parBound.x}px`, top: `${parBound.y}px`, position: `absolute` });
@@ -72,11 +74,10 @@ export const reposition = (boxes, { sep = 50, randOff = 10 } = global.params) =>
 
         // The bound of a random ready box
         let b2 = getBound(boxes[randInt(0, numReady)]);
+        console.log(b2);
 
         let side = randInt(0, 4);             // Randomly pick side to align to
-        console.log(`Side ${side}`);
         let off = randInt(-randOff, randOff); // Calculate random offset for `box`...
-        console.log(`Off ${off}`);
         let [x, y] = [0, 0];              // We'll calculate `x` and `y` next...
 
         // Align left
@@ -91,9 +92,6 @@ export const reposition = (boxes, { sep = 50, randOff = 10 } = global.params) =>
         // Align bottom
         if (side === 3) [x, y] = [b2.x + off, b2.y + (b2.hh + b.hh + sep)];
 
-        console.log(x);
-        console.log(y);
-        console.log(box);
         Object.assign(box.style, { left: `${x}px`, top: `${y}px`, position: `absolute` });
 
         // Check if `box` now collides any of the ready boxes. If it doesn't,
