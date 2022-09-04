@@ -15,33 +15,3 @@ export const Nav = styled.nav`
       align-items: flex-end;
     }
 `;
-
-export const NavLogo = styled(Link)`
-  cursor: pointer;
-  color: #FF0000;
-  font-size: 1.5em;
-  text-decoration: none;
-  text-align: right;
-  @media ${device.laptop} {
-    font-size: 4.5em;
-  }
-`;
-
-export const NavBtn = styled.nav`
-  display: flex;
-  align-items: center;
-  margin-right: 24px;
-
-  @media ${device.laptop} {
-    display: none;
-  }
-`;
-
-export const Hamburger = styled.label`
-    width: 20%;
-    max-width: 35px;
-
-    @media ${device.laptop} { 
-      display: none;
-    }
-`;

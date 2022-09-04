@@ -2,7 +2,7 @@ import useMediaQuery from '../../common/hooks/useMediaQuery';
 import { device } from '../../common/device-sizes';
 import { Link } from "react-router-dom";
 import React from 'react';
-import '../../styles.css'
+import './navbar.css';
 
 const Navbar = ({onClick}) => {
 

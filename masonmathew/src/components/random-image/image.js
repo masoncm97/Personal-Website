@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { device } from '../../common/device-sizes';
 import './random-image-container.css'
 
-export const Image1 = styled.img`
+export const Image = styled.img`
     max-width: 260px;
 
     @media ${device.laptop} { 
@@ -20,6 +20,6 @@ export const ImageBox = ({image, style}) => {
     const [state, setState] = useState(false);
 
     return (
-            <Image1 className={"random-image"} src={image} style={style} loading="lazy"/>
+            <Image className={"random-image"} src={image} style={style} loading="lazy"/>
     );
 };

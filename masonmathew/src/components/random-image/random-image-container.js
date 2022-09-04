@@ -6,6 +6,7 @@ import { device } from '../../common/device-sizes';
 import { boxCollides, getBound, reposition, shuffleWidth } from './bounding-utilities';
 import { useWhatChanged } from '@simbathesailor/use-what-changed';
 import { useEffect, componentDidMount, useRef } from 'react';
+import arrows from "../../assets/arrows.svg"
 import './random-image-container.css';
 
 
@@ -97,7 +98,10 @@ const ImageScroll = () => {
 
     return (
         <div className={isLaptop ? "random-image-container" : ""}>
-            <button className="play-pause-button" onClick={toggle}>{shuffling ? "Pause" : "Play"}</button>
+            <div className="random-image-sidebar">
+                <button className="play-pause-button" onClick={toggle}>{shuffling ? "Pause" : "Play"}</button>
+                <img className="arrows" src={arrows} alt="arrows"/>
+            </div>
             {boxes != null && imgsLoaded && images.map(
                 (image, index) => <ImageBox key={index} className="random-image image" src={image} loading="lazy"></ImageBox>
             )

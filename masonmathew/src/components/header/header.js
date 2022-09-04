@@ -7,8 +7,11 @@ import {
 import hamburger from "../../assets/hamburger.svg"
 import { device } from '../../common/device-sizes';
 import useMediaQuery from '../../common/hooks/useMediaQuery';
-import '../../styles.css'
+import './header.css'
 import Navbar from '../navbar/navbar'
+import {
+    HeaderLogo
+} from "./header-elements";
     
 
 const Header = () => {
@@ -20,9 +23,9 @@ const Header = () => {
            <Nav>   
                 <MobileHeader style={styles.toggleElement(!isLaptop)} />
                 
-                <NavLogo style={styles.toggleElement(isLaptop)} to="/">
+                <HeaderLogo style={styles.toggleElement(isLaptop)} to="/">
                         Mason Mathai
-                </NavLogo>
+                </HeaderLogo>
 
                 <div style={styles.toggleElement(isLaptop)}>
                     <Navbar/>
@@ -41,9 +44,9 @@ const MobileHeader = () => {
     return (      
             <div style={styles.toggleElement(!isLaptop)} className="mobileHeader">
                 
-                <NavLogo to="/">
+                <HeaderLogo to="/">
                     Mason Mathai
-                </NavLogo>
+                </HeaderLogo>
                 
                 <input type="checkbox" id="hamburger-checkbox" className="hamburger-checkbox toggleHamburger" onClick={() => setNavbarState(true)}/>
                 <label className="hamburger" htmlFor="hamburger-checkbox"><img src={hamburger} alt="hamburger"/></label>

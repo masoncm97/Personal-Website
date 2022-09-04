@@ -33,13 +33,27 @@
     display: none;
 }
 
-.play-pause-button {
+.random-image-sidebar {
     z-index: 99;
+    position: fixed;
+    left: 0;
+    display: flex;
+    margin: 5% 0% 0% 5%;
+    flex-direction: column;
+    max-width: 300px;
+    min-height: 700px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.play-pause-button {
     border: none;
     background-color: inherit;
     color: #FF0000;
     font-size: 2em;
-    position: fixed;
-    left: 0;
-    margin: 5% 0% 0% 5%;
+}
+
+.arrows {
+    z-index: 99;
+    width: 40%;
 }
