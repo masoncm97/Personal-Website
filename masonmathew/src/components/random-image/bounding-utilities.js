@@ -38,7 +38,8 @@ export const boxCollides = (box, boxes, parBound, sep) => {
 
 export const getBound = (elem, isRoot) => {
   let { width, height } = elem.getBoundingClientRect();
-  console.log(elem);
+  //console.log(elem);
+  //console.log(elem.getBoundingClientRect());
 
   return {
     x: isRoot ? width >> 1 : (parseInt(elem.style.left) || 0),
@@ -51,13 +52,10 @@ export const getBound = (elem, isRoot) => {
 };
 
 export const reposition = (boxes, { sep = 50, randOff = 10 } = global.params) => {
-  console.log(boxes.length != 0);
-  if (boxes != null && boxes.length != 0) {
-    console.log("hey 2");
     boxes = [...boxes].sort(function () { return Math.random() - 0.5; });
 
-    console.log(boxes[0]);
-    console.log(boxes[0].parentNode);
+    //console.log(boxes[0]);
+    //console.log(boxes[0].parentNode);
     let parBound = getBound(boxes[0].parentNode, true);
 
     // Consider the 1st box "ready"; position it in the center
@@ -69,12 +67,13 @@ export const reposition = (boxes, { sep = 50, randOff = 10 } = global.params) =>
       let box = boxes[numReady];
       let b = getBound(box);
 
+
       // Use a counting loop to prevent too many attempts
       for (let attempts = 0; attempts < 500; attempts++) {
 
         // The bound of a random ready box
         let b2 = getBound(boxes[randInt(0, numReady)]);
-        console.log(b2);
+        // console.log(b2);
 
         let side = randInt(0, 4);             // Randomly pick side to align to
         let off = randInt(-randOff, randOff); // Calculate random offset for `box`...
@@ -92,14 +91,20 @@ export const reposition = (boxes, { sep = 50, randOff = 10 } = global.params) =>
         // Align bottom
         if (side === 3) [x, y] = [b2.x + off, b2.y + (b2.hh + b.hh + sep)];
 
-        Object.assign(box.style, { left: `${x}px`, top: `${y}px`, position: `absolute` });
+        Object.assign(box.style, { left: `${x}px`, top: `${y}px`, position: `absolute`});
 
         // Check if `box` now collides any of the ready boxes. If it doesn't,
         // we've successfully positioned it and `box` is ready!
         if (!boxCollides(box, boxes.slice(0, numReady), parBound, sep)) break;
-
       }
-
     }
+};
+
+export const shuffleWidth = (boxes) => {
+  for(const box of boxes) {
+    let b = getBound(box);
+    // console.log(b);
+    let off = randInt(100, 500);
+    Object.assign(box.style, { width: `${b.w + off}px`});
   }
 };

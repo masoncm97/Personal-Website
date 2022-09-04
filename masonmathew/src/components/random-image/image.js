@@ -8,14 +8,14 @@ export const Image1 = styled.img`
 
     @media ${device.laptop} { 
         margin-top: 0%;
-        max-width: 200px;
-        max-height: 700px;
+        /* max-width: 200px;
+        max-height: 700px; */
     }
 
 `;
 
 
-export const Image = ({image, style}) => {
+export const ImageBox = ({image, style}) => {
 
     const [state, setState] = useState(false);
 

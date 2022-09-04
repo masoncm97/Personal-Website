@@ -21,7 +21,7 @@ const Header = () => {
                 <MobileHeader style={styles.toggleElement(!isLaptop)} />
                 
                 <NavLogo style={styles.toggleElement(isLaptop)} to="/">
-                        Mason Mathew
+                        Mason Mathai
                 </NavLogo>
 
                 <div style={styles.toggleElement(isLaptop)}>
@@ -42,7 +42,7 @@ const MobileHeader = () => {
             <div style={styles.toggleElement(!isLaptop)} className="mobileHeader">
                 
                 <NavLogo to="/">
-                    Mason Mathew
+                    Mason Mathai
                 </NavLogo>
                 
                 <input type="checkbox" id="hamburger-checkbox" className="hamburger-checkbox toggleHamburger" onClick={() => setNavbarState(true)}/>

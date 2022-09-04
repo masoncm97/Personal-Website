@@ -24,8 +24,6 @@ export const NavLogo = styled(Link)`
   text-align: right;
   @media ${device.laptop} {
     font-size: 4.5em;
-    margin: 10% 10% 0% 0%;
-
   }
 `;
 

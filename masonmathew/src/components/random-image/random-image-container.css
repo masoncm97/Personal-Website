@@ -32,3 +32,14 @@
 .random-image-container::-webkit-scrollbar {
     display: none;
 }
+
+.play-pause-button {
+    z-index: 99;
+    border: none;
+    background-color: inherit;
+    color: #FF0000;
+    font-size: 2em;
+    position: fixed;
+    left: 0;
+    margin: 5% 0% 0% 5%;
+}

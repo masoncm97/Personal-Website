@@ -12,6 +12,7 @@
 .nonmobile-header {
     position: fixed;
     right: 0;
+    margin: 5% 5% 0% 0%;
 }
 
 input[type="checkbox"]:checked ~ .testNav {
