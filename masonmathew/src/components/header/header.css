@@ -12,7 +12,6 @@
 .toggleHamburger {
     cursor: pointer;
     position: absolute;
-    z-index: 99;
     height: 100%;
     width: 100%;
     top: 22px;
@@ -21,10 +20,23 @@
     width: 22px;
 }
 
+.header {
+    position: fixed;
+    z-index: 99;
+}
+
 .nonmobile-header {
     position: fixed;
     right: 0;
     margin: 5% 5% 0% 0%;
+}
+
+.mobileHeader{
+    display: flex;
+    justify-content: space-between;
+    min-width: 80vw;
+    margin: 5% 5% 0% 5%;
+    border: 1px solid red;
 }
 
 input[type="checkbox"]:checked ~ .testNav {
@@ -35,13 +47,6 @@ input[type=checkbox] {
     transition: all 250ms;
     box-sizing: border-box;
     display: none;
-}
-
-.mobileHeader{
-    display: flex;
-    justify-content: space-between;
-    min-width: 80vw;
-    margin-top: 10%;
 }
 
 .testNav {

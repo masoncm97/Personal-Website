@@ -19,7 +19,7 @@ const Header = () => {
     const isLaptop= useMediaQuery(`${device.laptop}`);
 
     return (
-        <div className={ isLaptop ?  "nonmobile-header" : "" }>
+        <div className={ isLaptop ?  "header nonmobile-header" : "" }>
            <Nav>   
                 <MobileHeader style={styles.toggleElement(!isLaptop)} />
                 
@@ -42,7 +42,7 @@ const MobileHeader = () => {
     
 
     return (      
-            <div style={styles.toggleElement(!isLaptop)} className="mobileHeader">
+            <div style={styles.toggleElement(!isLaptop)} className={"header mobileHeader"}>
                 
                 <HeaderLogo to="/">
                     Mason Mathai

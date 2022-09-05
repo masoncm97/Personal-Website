@@ -11,6 +11,7 @@ import './random-image-container.css';
 
 
 const ImageScroll = () => {
+    
 
     var listOfImages = [];
     const [images, setImages] = useState([]);
@@ -20,30 +21,44 @@ const ImageScroll = () => {
     const [shuffling, setShuffling] = useState(true);
     const shuffleInterval = useRef(0);
     const isMounted = useRef(false);
+    const isLaptop = useMediaQuery(`${device.laptop}`);
+    let randInt = (min, max) => Math.floor(min + Math.random() * (max - min));
+    
 
     let toggle = () => {
         setShuffling(!shuffling);
-        console.log(shuffleInterval.current);
     }
 
     let shuffleBoxes = (boxes) => {
-        console.log("shuffle");
         reposition(boxes);
         shuffleWidth(boxes);
         let interval = setInterval(() => reposition(boxes), 2500);
         shuffleInterval.current = interval;
-        console.log(shuffleInterval.current);
     };
     
 
     let pauseShuffle = () => {
-        console.log("pause");
-        console.log(shuffleInterval.current);
         clearInterval(shuffleInterval.current);
     };
+
+    let arrayIsPopulated = (arr) => {
+        return (arr != null && arr.length != 0) ? true : false;
+    }
     
-    let importAll = (r) => {
+    const importAll = (r) => {
         return r.keys().map(r);
+    };
+
+    let useEffectPostRender = (callback, deps) => {
+        useEffect(() => {
+            console.log("kill");
+            console.log(deps);
+            if(isMounted.current) {
+                callback(deps);
+            } else {
+                isMounted.current = true;
+            }
+        }, [callback, deps]);
     };
 
     useEffect(() => {
@@ -74,26 +89,17 @@ const ImageScroll = () => {
         setBoxes(boxes);
     }, [imgsLoaded]);
 
-    useEffect(() => {
-        if(isMounted.current && boxes != null && boxes.length != 0) {
+    useEffectPostRender((boxes) => {
+        if(arrayIsPopulated(boxes)) {
             shuffleBoxes(boxes);
-        } else {
-            isMounted.current = true;
         }
-    }, [boxes]);
+    }, boxes);
 
-    useEffect(() => {
-        console.log("hey");
-        if(isMounted.current && boxes != null && boxes.length != 0)  {
+    useEffectPostRender((shuffling) => {
+        if(arrayIsPopulated(boxes)) {
             shuffling ? shuffleBoxes(boxes) : pauseShuffle();
-        } else {
-            isMounted.current = true;
         }
-    }, [shuffling]);
-
-
-    let randInt = (min, max) => Math.floor(min + Math.random() * (max - min));
-    const isLaptop = useMediaQuery(`${device.laptop}`);
+    }, shuffling);
 
 
     return (

@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: fixed;
+    z-index: 99;
 }
 
 .navLink {
@@ -15,7 +17,6 @@
 
 .mobile.navMenu {
     align-items: flex-start;
-
     @media min-width: 1024px { 
         display: none;
     }
@@ -28,7 +29,6 @@
 
 .nonMobile.navMenu {
     align-items: flex-end;
-    display: fixed;
 }
 
 .nonMobile.navLink {
