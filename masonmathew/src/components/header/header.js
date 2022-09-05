@@ -27,7 +27,7 @@ const Header = () => {
                         Mason Mathai
                 </HeaderLogo>
 
-                <div style={styles.toggleElement(isLaptop)}>
+                <div className="expando" style={styles.toggleElement(isLaptop)}>
                     <Navbar/>
                 </div>
            </Nav> 

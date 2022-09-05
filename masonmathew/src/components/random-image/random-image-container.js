@@ -33,11 +33,13 @@ const ImageScroll = () => {
         reposition(boxes);
         shuffleWidth(boxes);
         let interval = setInterval(() => reposition(boxes), 2500);
+        console.log(`${"shuffle " + shuffleInterval.current}`);
         shuffleInterval.current = interval;
     };
     
 
     let pauseShuffle = () => {
+        console.log(`${"clear " + shuffleInterval.current}`);
         clearInterval(shuffleInterval.current);
     };
 
@@ -51,8 +53,6 @@ const ImageScroll = () => {
 
     let useEffectPostRender = (callback, deps) => {
         useEffect(() => {
-            console.log("kill");
-            console.log(deps);
             if(isMounted.current) {
                 callback(deps);
             } else {
@@ -89,12 +89,6 @@ const ImageScroll = () => {
         setBoxes(boxes);
     }, [imgsLoaded]);
 
-    useEffectPostRender((boxes) => {
-        if(arrayIsPopulated(boxes)) {
-            shuffleBoxes(boxes);
-        }
-    }, boxes);
-
     useEffectPostRender((shuffling) => {
         if(arrayIsPopulated(boxes)) {
             shuffling ? shuffleBoxes(boxes) : pauseShuffle();
@@ -104,7 +98,7 @@ const ImageScroll = () => {
 
     return (
         <div className={isLaptop ? "random-image-container" : ""}>
-            <div className="random-image-sidebar">
+            <div className={(isLaptop ? "nonmobile" : "mobile") + " random-image-sidebar"}>
                 <button className="play-pause-button" onClick={toggle}>{shuffling ? "Pause" : "Play"}</button>
                 <img className="arrows" src={arrows} alt="arrows"/>
             </div>

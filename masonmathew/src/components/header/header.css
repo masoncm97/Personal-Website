@@ -21,18 +21,24 @@
 }
 
 .header {
-    position: fixed;
     z-index: 99;
+    position: fixed;
+    display: flex;
 }
 
 .nonmobile-header {
-    position: fixed;
+    flex-direction: column;
+    max-width: 300px;
+    min-height: 700px;
+    justify-content: space-between;
+    align-items: flex-start;
     right: 0;
     margin: 5% 5% 0% 0%;
 }
 
 .mobileHeader{
-    display: flex;
+    left: 0;
+    top: 0;
     justify-content: space-between;
     min-width: 80vw;
     margin: 5% 5% 0% 5%;
