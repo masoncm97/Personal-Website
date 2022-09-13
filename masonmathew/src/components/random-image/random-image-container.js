@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Data as data } from "../../assets/paintings/data";
 import useMediaQuery from '../../common/hooks/useMediaQuery';
 import styled from 'styled-components';
 import { device } from '../../common/device-sizes';
-import { boxCollides, getBound, reposition, shuffleWidth } from './bounding-utilities';
-import { useWhatChanged } from '@simbathesailor/use-what-changed';
-import { useEffect, componentDidMount, useRef } from 'react';
+import { reposition, shuffleWidth } from './bounding-utilities';
+import { useEffect, useRef } from 'react';
 import arrows from "../../assets/arrows.svg"
 import './random-image-container.css';
 
@@ -13,16 +11,13 @@ import './random-image-container.css';
 const ImageScroll = () => {
     
 
-    var listOfImages = [];
     const [images, setImages] = useState([]);
     const [boxes, setBoxes] = useState(null);
     const [imgsLoaded, setImgsLoaded] = useState(false)
-    const [playing, setPlaying] = useState(false);
     const [shuffling, setShuffling] = useState(true);
     const shuffleInterval = useRef(0);
     const isMounted = useRef(false);
     const isLaptop = useMediaQuery(`${device.laptop}`);
-    let randInt = (min, max) => Math.floor(min + Math.random() * (max - min));
     
 
     let toggle = () => {
@@ -44,7 +39,7 @@ const ImageScroll = () => {
     };
 
     let arrayIsPopulated = (arr) => {
-        return (arr != null && arr.length != 0) ? true : false;
+        return (arr !== null && arr.length !== 0) ? true : false;
     }
     
     const importAll = (r) => {

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../../common/functions'
 import {
-    Nav,
-    NavLogo, 
+    Nav
 } from "../navbar/navbar-elements";
 import hamburger from "../../assets/hamburger.svg"
 import { device } from '../../common/device-sizes';
