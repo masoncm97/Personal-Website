@@ -3,8 +3,7 @@ import Home from "./components/home/home"
 import Paintings from "./components/random-image/random-image-container"
 import {
   Routes,
-  Route,
-  BrowserRouter,
+  Route
 } from 'react-router-dom'
 import Header from "./components/header/header";
 import styled from 'styled-components';

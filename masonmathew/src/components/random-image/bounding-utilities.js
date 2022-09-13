@@ -102,7 +102,6 @@ export const reposition = (boxes, { sep = 50, randOff = 10 } = global.params) =>
 
 export const shuffleWidth = (boxes) => {
   for(const box of boxes) {
-    let b = getBound(box);
     let off = randInt(100, 500);
     Object.assign(box.style, { width: `${off}px`});
   }
