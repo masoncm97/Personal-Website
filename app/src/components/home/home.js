@@ -1,24 +1,16 @@
-import styled from 'styled-components';
-import { device } from '../../common/device-sizes';
 import '../../styles.css'
-
+import NameHeaderComponent from '../headers/name-header/name-header-component.js'
+import ShuffleImageComponent from '../shuffle-image/shuffle-image-component.js'
+import HomeNavBarComponent from '../navbars/home-navbar/home-navbar-component.js'
+import FlexContainer from '../generic/flex.js';
 const Home = () => {
 
     return (
-        <HomeImage src={"/paintings/pixel-painting.jpg"} alt="Home Image" />
+        <div>
+            <NameHeaderComponent></NameHeaderComponent>
+        </div>
     );
 };
 
-export const HomeImage = styled.img`
-    max-width: 300px;
-    margin-top: 10%;
-
-    @media ${device.laptop} { 
-        margin-top: 0%;
-        max-width: 500px;
-        max-height: 700px;
-    }
-
-`;
 
 export default Home;
