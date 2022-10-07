@@ -1,8 +1,12 @@
-const FlexContainer = () => {
+import styled from "styled-components";
 
-    return (
-        <div className="flex"></div>
-    );
-};
+const FlexContainer = styled.div`
+    display: flex;
+`;
 
-export default FlexContainer;
+const LargeHeader = styled.h1`
+    color: #FF0000;
+    font-family: Helvetica, Sans-Serif;
+`;
+
+export {FlexContainer,LargeHeader};

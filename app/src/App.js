@@ -1,5 +1,6 @@
 import './App.css';
-import Home from "./components/home/home"
+import Home from "./components/home/home-component"
+import About from "./components/about/about-component"
 import {
   Routes,
   Route
@@ -12,6 +13,7 @@ function App() {
       <AppContainer>
             <Routes>
               <Route exact path="/" element={<Home />} />
+              <Route exact path="/about" element={<About />} />
             </Routes> 
       </AppContainer> 
   );
@@ -23,6 +25,9 @@ export const AppContainer = styled.div`
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    min-width: 100vw;
+    min-height: 100vh;
+    border: 1px solid blue;
 `;
 
 export default App;
