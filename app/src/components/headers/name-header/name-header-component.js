@@ -5,7 +5,7 @@ import '../../generic/generic.css';
 const NameHeaderComponent = () => {
 
     return ( 
-        <div className="flex flex-start border">
+        <div className="flex-start border-red">
             <h1>Mason Mathai</h1>
         </div>
     );

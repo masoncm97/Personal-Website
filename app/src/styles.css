@@ -4,6 +4,7 @@ p, h1, h2, h3, h4 {
     font-weight: 400;
 }
 
+/* Flex */
 
 .flex {
     display: flex;
@@ -11,12 +12,18 @@ p, h1, h2, h3, h4 {
 
 .flex-start {
     justify-content: start;
+    width: 100%;
 }
 
 .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.flex-space-between {
+    display: flex;
+    justify-content: space-between;
 }
 
 .flex-column {
@@ -27,9 +34,13 @@ p, h1, h2, h3, h4 {
     border: 1px solid blue;
 }
 
+/* Position */
+
 .pos-relative {
     position: relative;
 }
+
+/* Responsive */ 
 
 .responsive-container {
     width: 100vw;
@@ -43,6 +54,23 @@ p, h1, h2, h3, h4 {
     }
 }
 
+/* Button */
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+/* Debugging */
+
+.border-red {
+    border: 1px solid red;
+}
 
 
 
