@@ -3,11 +3,6 @@ import data from '../../assets/data.js';
 
 const ScrollTextComponent = () => {
 
-    console.log(data);
-    data.forEach(element => {
-        console.log(element._id)
-    });
-
     return (
         <div className="border-red">
             {

@@ -1,4 +1,3 @@
-import {VerticalContainer} from "../../../common/reusable-components/reusable";
 import './home-navbar-component.css';
 
 const HomeNavBarComponent = () => {

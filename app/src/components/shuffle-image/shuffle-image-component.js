@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import useLoadImages from '../../common/hooks/useLoadImages';
-import { CenteredContainer } from '../../common/reusable-components/reusable';
 import './shuffle-image-container.css';
 
 const ShuffleImageComponent = () => {
@@ -12,7 +11,7 @@ const ShuffleImageComponent = () => {
         <div className="shuffle-image-container flex-center">
             {
                 imageContext.images != null && imageContext.imgsLoaded &&
-                <img className="half" src={imageContext.images[0]} />
+                <img className="half" src={imageContext.images[0]} alt="alt" />
             }
         </div>
     );

@@ -9,7 +9,7 @@ import '../../styles.css';
 import NavHeaderComponent from '../headers/nav-header/nav-header-component.js';
 
 const SelectedProjects = () => {
-    
+
     const isNonMobile = useMediaQuery(`${device.laptop}`);
 
     return (
@@ -23,11 +23,10 @@ const SelectedProjects = () => {
                         </div>
                     )
                 }
-                
-                        <div className="flex-column">
-                            <NavHeaderComponent title={"Selected Projects"}></NavHeaderComponent>
-                            <ScrollTextComponent></ScrollTextComponent>
-                        </div>
+                <div className="flex-column">
+                    <NavHeaderComponent title={"Selected Projects"}></NavHeaderComponent>
+                    <ScrollTextComponent></ScrollTextComponent>
+                </div>
 
             </ResponsiveContainer>
         </StaticPage>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const useLoadImages = (context) => {
   const [images, setImages] = useState([]);
@@ -29,7 +29,8 @@ const useLoadImages = (context) => {
     Promise.all(data.map(image => loadImage(image)))
       .then(() => setImgsLoaded(true))
       .catch(err => console.log("Failed to load images", err));
-  }, [])
+  }, [context])
+
 
   return {images, imgsLoaded};
 
