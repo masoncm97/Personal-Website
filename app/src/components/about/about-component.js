@@ -12,7 +12,6 @@ const AboutComponent = () => {
     const isNonMobile = useMediaQuery(`${device.laptop}`);
 
     return (
-        <div>
             <StaticPage>
                 <ResponsiveContainer>
                     <div className="flex-column">
@@ -32,7 +31,6 @@ const AboutComponent = () => {
                     </div>
                 </ResponsiveContainer>
             </StaticPage>
-        </div>
     );
 };
 

@@ -6,6 +6,7 @@ import {
   Route
 } from 'react-router-dom'
 import styled from 'styled-components';
+import SelectedProjects from './components/selected-projects/selected-projects';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
+              <Route exact path="/selected-projects" element={<SelectedProjects />} />
             </Routes> 
       </AppContainer> 
   );

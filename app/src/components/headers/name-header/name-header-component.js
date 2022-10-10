@@ -1,7 +1,6 @@
 import { FlexContainer, LargeHeader } from '../../generic/flex';
 import '../../generic/generic.css';
 
-
 const NameHeaderComponent = () => {
 
     return ( 
