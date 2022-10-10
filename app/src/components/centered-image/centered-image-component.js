@@ -10,7 +10,7 @@ const CenteredImageComponent = () => {
         <div className="flex-center">
             {
                 imageContext.images != null && imageContext.imgsLoaded &&
-                <img className="half" src={imageContext.images[0]} img="alt" />
+                <img className="half" src={imageContext.images[0]} alt="alt" />
             }
         </div>
     );
