@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <StaticPage>
             <ResponsiveContainer>
-                <div className="flex-column pos-relative home-content">
+                <div className="flex-column align-center pos-relative home-content">
                     <NameHeaderComponent></NameHeaderComponent>
                     <ShuffleImageComponent></ShuffleImageComponent>
                     <div className="link-container">

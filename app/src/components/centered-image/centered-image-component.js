@@ -1,17 +1,10 @@
 import React from 'react';
-import useLoadImages from '../../common/hooks/useLoadImages';
 
-const CenteredImageComponent = () => {
-
-    const context = require.context('../../photos/2x', false, /\.(webp)$/);
-    const imageContext = useLoadImages(context);
+const CenteredImageComponent = ({centerImage}) => {
 
     return (
-        <div className="flex-center">
-            {
-                imageContext.images != null && imageContext.imgsLoaded &&
-                <img className="half" src={imageContext.images[0]} alt="alt" />
-            }
+        <div className="half-screen-width flex-center">
+            <img className="half" src={centerImage.url} alt="alt" />
         </div>
     );
 };

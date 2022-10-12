@@ -2,33 +2,41 @@ import React from 'react';
 import NameHeaderComponent from '../headers/name-header/name-header-component.js';
 import CenteredImageComponent from '../centered-image/centered-image-component.js'
 import ScrollTextComponent from '../scroll-text/scroll-text-component.js';
-import { StaticPage, ResponsiveContainer } from '../../common/reusable-components/reusable';
+import ScrollImageComponent from '../scroll-image/scroll-image-component'
+import { StaticPage, ResponsiveContainer, VerticalContainer, Container } from '../../common/reusable-components/reusable';
 import useMediaQuery from '../../common/hooks/useMediaQuery';
 import { device } from '../../common/device-sizes';
 import '../../styles.css';
 import NavHeaderComponent from '../headers/nav-header/nav-header-component.js';
+import data from '../../assets/data.js';
+import useLoadImages from '../../common/hooks/useLoadImages';
+import useImageMapper from '../../common/hooks/useImageMapper';
+import TheaterComponent from '../theater/theater-component.js';
 
 const SelectedProjects = () => {
 
     const isNonMobile = useMediaQuery(`${device.laptop}`);
+    const context = require.context('../../photos/2x', false, /\.(webp)$/);
+    const imageContext = useLoadImages(context);
+    const dataContext = useImageMapper(data, imageContext);
 
     return (
         <StaticPage>
-            <ResponsiveContainer>
+            <VerticalContainer>
+                <div className="flex-space-between">
                 {isNonMobile &&
                     (
-                        <div className="flex-column">
+                        <div className="flex-start">
                             <NameHeaderComponent></NameHeaderComponent>
-                            <CenteredImageComponent></CenteredImageComponent>
                         </div>
                     )
                 }
-                <div className="flex-column">
-                    <NavHeaderComponent title={"Selected Projects"}></NavHeaderComponent>
-                    <ScrollTextComponent></ScrollTextComponent>
+               <NavHeaderComponent title={"Selected Projects"}></NavHeaderComponent> 
                 </div>
-
-            </ResponsiveContainer>
+            { dataContext.imgsMapped && imageContext.imgsLoaded &&
+                <TheaterComponent data={dataContext}></TheaterComponent>
+            }
+            </VerticalContainer>
         </StaticPage>
     );
 };

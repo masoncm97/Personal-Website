@@ -1,13 +1,12 @@
 import React from 'react';
-import data from '../../assets/data.js';
 
-const ScrollTextComponent = () => {
+const ScrollTextComponent = ({data, setCenterImage}) => {
 
     return (
-        <div className="border-red">
+        <div className="half-screen-width flex-column border-red">
             {
                 data.map(element => {
-                    return (<div key={element._id}><p>{element.title}</p></div>)
+                    return (<button onMouseEnter={() => setCenterImage(element)} key={element._id}><p style={{textAlign:"left"}}>{element.title}</p></button>)
                 })
             }
         </div>

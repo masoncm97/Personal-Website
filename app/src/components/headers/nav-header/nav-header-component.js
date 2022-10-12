@@ -10,7 +10,7 @@ const NavHeaderComponent = ( {title} ) => {
     const imageContext = useLoadImages(context);
 
     return (
-        <div className="flex-space-between border-red">
+        <div className="flex-space-between header-element border-red">
             <h3>{title}</h3>
             <button onClick={() => navigate(-1)}><img className="nav-header-arrow" src={imageContext.images[0]} alt="navHeaderArrow"></img></button>
         </div>
