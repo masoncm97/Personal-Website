@@ -1,4 +1,2 @@
-[[headers]]
-  for = "*.webp"
-  [headers.values]
+*.webp
     Cache-Control = "public, max-age=604800"
