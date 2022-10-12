@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import NameHeaderComponent from '../headers/name-header/name-header-component.js';
 import CenteredImageComponent from '../centered-image/centered-image-component.js'
 import ScrollTextComponent from '../scroll-text/scroll-text-component.js';
 import ScrollImageComponent from '../scroll-image/scroll-image-component'

@@ -1,9 +1,6 @@
 import React from 'react';
 import NameHeaderComponent from '../headers/name-header/name-header-component.js';
-import CenteredImageComponent from '../centered-image/centered-image-component.js'
-import ScrollTextComponent from '../scroll-text/scroll-text-component.js';
-import ScrollImageComponent from '../scroll-image/scroll-image-component'
-import { StaticPage, ResponsiveContainer, VerticalContainer, Container } from '../../common/reusable-components/reusable';
+import { StaticPage, VerticalContainer } from '../../common/reusable-components/reusable';
 import useMediaQuery from '../../common/hooks/useMediaQuery';
 import { device } from '../../common/device-sizes';
 import '../../styles.css';
