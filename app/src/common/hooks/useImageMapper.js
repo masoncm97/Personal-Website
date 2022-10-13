@@ -12,10 +12,9 @@ const useImageMapper = (imgData, imageContext) => {
 
   useEffect(() => {
     if (imageContext.imgsLoaded) {
-      mapImages(imgData, imageContext.images)
+      mapImages(imgData, imageContext.images);
+      setImgsMapped(true);
     }
-
-    setImgsMapped(true);
 
   }, [imgData, imageContext])
 

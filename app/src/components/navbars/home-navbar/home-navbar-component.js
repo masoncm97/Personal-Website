@@ -8,7 +8,7 @@ const HomeNavBarComponent = () => {
             <a href="/selected-projects">Selected Projects</a>
         </div>
         <div className="home-nav-element">
-            <p>Portfolio</p>
+            <a href="/archive">Archive</a>
         </div>
     </div>
     );

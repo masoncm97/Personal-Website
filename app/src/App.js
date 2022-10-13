@@ -6,7 +6,8 @@ import {
   Route
 } from 'react-router-dom'
 import styled from 'styled-components';
-import SelectedProjects from './components/selected-projects/selected-projects';
+import SelectedProjects from './components/selected-projects/selected-projects-component';
+import Archive from './components/archive/archive-component';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/about" element={<About />} />
               <Route exact path="/selected-projects" element={<SelectedProjects />} />
+              <Route exact path="/archive" element={<Archive />} />
             </Routes> 
       </AppContainer> 
   );

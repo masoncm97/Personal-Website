@@ -1,5 +1,3 @@
-import '../../generic/generic.css';
-
 const NameHeaderComponent = () => {
 
     return ( 

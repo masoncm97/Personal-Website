@@ -4,10 +4,10 @@ const ScrollImageComponent = ({ data }) => {
 
     console.log(data);
     return (
-        <div className="border-red">
+        <div className="border-red flex-column">
             {
                 data.map(element => {
-                    return (<div key={element._id}><img className="half" src={element.url} alt={element.title}/></div>)
+                    return (<div key={element._id} className="flex-center"><img className="half" src={element.url} alt={element.title}/></div>)
                 })
             }
         </div>
