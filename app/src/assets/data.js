@@ -1,12 +1,12 @@
 const data = [
     {
         _id: 0,
+        key: 'P000',
         url: '',
         images: {
-            small: "P000@1x.webp",
-            medium: "P000@2x.webp", 
-            large: "P000@3x.webp",
-            xlarge: "P000@4x.webp"
+            small: 'hi',
+            medium: '', 
+            large: '',
         },
         title: "Sunset",
         locaton: "Nashville, TN",
@@ -15,12 +15,12 @@ const data = [
     },
     {
         _id: 1,
+        key: 'P001',
         url: '',
         images: {
-            small: "P001@1x.webp",
-            medium: "P020@2x.webp", 
-            large: "P002@3x.webp",
-            xlarge: "P002@4x.webp"
+            small: 'hi',
+            medium: '', 
+            large: ''
         },
         title: "Family",
         location: "Nashville, TN",

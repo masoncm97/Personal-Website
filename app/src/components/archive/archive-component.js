@@ -13,7 +13,7 @@ import TheaterComponent from '../theater/theater-component.js';
 const Archive = () => {
 
     const isNonMobile = useMediaQuery(`${device.laptop}`);
-    const context = require.context('../../photos/2x', false, /\.(webp)$/);
+    const context = require.context('../../photos', true, /\.(webp)$/);
     const imageContext = useLoadImages(context);
     const dataContext = useImageMapper(data, imageContext);
 

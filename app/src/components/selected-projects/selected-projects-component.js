@@ -8,12 +8,17 @@ import NavHeaderComponent from '../headers/nav-header/nav-header-component.js';
 import data from '../../assets/data.js';
 import useLoadImages from '../../common/hooks/useLoadImages';
 import useImageMapper from '../../common/hooks/useImageMapper';
+import useImageMapper2 from '../../common/hooks/useImageMapper2.ts';
 import TheaterComponent from '../theater/theater-component.js';
+import { Entry } from '../../common/types/entry';
+import { ImagesContext } from '../../common/types/image';
 
 const SelectedProjects = () => {
 
     const isNonMobile = useMediaQuery(`${device.laptop}`);
-    const context = require.context('../../photos/2x', false, /\.(webp)$/);
+
+    // Import all photos 
+    const context = require.context('../../photos', true, /\.(webp)$/);
     const imageContext = useLoadImages(context);
     const dataContext = useImageMapper(data, imageContext);
 
@@ -21,18 +26,18 @@ const SelectedProjects = () => {
         <StaticPage>
             <VerticalContainer>
                 <div className="flex-space-between">
-                {isNonMobile &&
-                    (
-                        <div className="flex-start">
-                            <NameHeaderComponent></NameHeaderComponent>
-                        </div>
-                    )
-                }
-               <NavHeaderComponent title={"Selected Projects"}></NavHeaderComponent> 
+                    {isNonMobile &&
+                        (
+                            <div className="flex-start">
+                                <NameHeaderComponent></NameHeaderComponent>
+                            </div>
+                        )
+                    }
+                    <NavHeaderComponent title={"Selected Projects"}></NavHeaderComponent>
                 </div>
-            { dataContext.imgsMapped && imageContext.imgsLoaded &&
-                <TheaterComponent data={dataContext}></TheaterComponent>
-            }
+                {dataContext.imgsMapped && imageContext.imgsLoaded &&
+                    <TheaterComponent data={dataContext}></TheaterComponent>
+                }
             </VerticalContainer>
         </StaticPage>
     );
