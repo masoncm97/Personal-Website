@@ -32,7 +32,7 @@ const useLoadImages = (context) => {
   }, [context])
 
 
-  return {images, imgsLoaded};
+  return {images: images, imgsLoaded: imgsLoaded};
 
 }
 

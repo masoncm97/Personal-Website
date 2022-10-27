@@ -8,10 +8,7 @@ import NavHeaderComponent from '../headers/nav-header/nav-header-component.js';
 import data from '../../assets/data.js';
 import useLoadImages from '../../common/hooks/useLoadImages';
 import useImageMapper from '../../common/hooks/useImageMapper';
-import useImageMapper2 from '../../common/hooks/useImageMapper2.ts';
 import TheaterComponent from '../theater/theater-component.js';
-import { Entry } from '../../common/types/entry';
-import { ImagesContext } from '../../common/types/image';
 
 const SelectedProjects = () => {
 
