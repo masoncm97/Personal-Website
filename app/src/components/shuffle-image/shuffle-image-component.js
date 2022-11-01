@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { device } from '../../common/device-sizes';
-import useLoadImages from '../../common/hooks/useLoadImages';
 import { randCoordinates } from '../../common/functions';
 import { Image  } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
@@ -9,9 +8,8 @@ import './shuffle-image-container.css';
 
 const ShuffleImageComponent = () => {
 
-    // const context = require.context('../../photos/home', true, /\.(webp)$/);
-    const imageURLs = ['../../photos/home/2x/BD1E6BF7-D9AC-41C8-8F29-19031697C727.webp', '../../photos/home/2x/IMG_2347.webp', '../../photos/home/2x/IMG_3051.webp']
-    // const { images, imgsLoaded } = useLoadImages(context);
+
+    const imageURLs = ['./photos/home/2x/BD1E6BF7-D9AC-41C8-8F29-19031697C727.webp', './photos/home/2x/IMG_2347.webp', './photos/home/2x/IMG_3051.webp']
     const CANV_APOTHEM = 1;
 
     return (
