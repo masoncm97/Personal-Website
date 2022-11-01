@@ -6,7 +6,11 @@ const ScrollTextComponent = ({data, setCenterImage}) => {
         <div className="half-screen-width flex-column border-red">
             {
                 data.map(element => {
-                    return (<button onMouseEnter={() => setCenterImage(element)} key={element._id}><p style={{textAlign:"left"}}>{element.title}</p></button>)
+                    return (
+                    <form key={element._id} action={`/feature/${element._id}`} method="get">
+                        <button onMouseEnter={() => setCenterImage(element)}><p style={{textAlign:"left"}}>{element.title}</p></button>
+                    </form>
+                    )
                 })
             }
         </div>

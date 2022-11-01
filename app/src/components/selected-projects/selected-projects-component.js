@@ -10,7 +10,7 @@ import useLoadImages from '../../common/hooks/useLoadImages';
 import useImageMapper from '../../common/hooks/useImageMapper';
 import TheaterComponent from '../theater/theater-component.js';
 
-const SelectedProjects = () => {
+const SelectedProjectsComponent = () => {
 
     const isNonMobile = useMediaQuery(`${device.laptop}`);
 
@@ -40,4 +40,4 @@ const SelectedProjects = () => {
     );
 };
 
-export default SelectedProjects;
+export default SelectedProjectsComponent;

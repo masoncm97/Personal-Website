@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from "react-router-dom";
 import NameHeaderComponent from '../headers/name-header/name-header-component.js';
 import { StaticPage, VerticalContainer } from '../../common/reusable-components/reusable';
 import useMediaQuery from '../../common/hooks/useMediaQuery';
@@ -10,17 +11,18 @@ import useLoadImages from '../../common/hooks/useLoadImages';
 import useImageMapper from '../../common/hooks/useImageMapper';
 import TheaterComponent from '../theater/theater-component.js';
 
-const ArchiveComponent = () => {
-
+const EntryFeatureComponent = () => {
+    
+    let { id } = useParams();
     const isNonMobile = useMediaQuery(`${device.laptop}`);
     const context = require.context('../../photos', true, /\.(webp)$/);
     const imageContext = useLoadImages(context);
     const dataContext = useImageMapper(data, imageContext);
-
+    
     return (
         <StaticPage>
-            <VerticalContainer>
-                <div className="flex-space-between">
+        <VerticalContainer>
+            <div className="flex-space-between">
                 {isNonMobile &&
                     (
                         <div className="flex-start">
@@ -28,14 +30,14 @@ const ArchiveComponent = () => {
                         </div>
                     )
                 }
-               <NavHeaderComponent title={"Archive"}></NavHeaderComponent> 
-                </div>
-            { dataContext.imgsMapped && imageContext.imgsLoaded &&
+                <NavHeaderComponent title={"Selected Projects"}></NavHeaderComponent>
+            </div>
+            {dataContext.imgsMapped && imageContext.imgsLoaded &&
                 <TheaterComponent data={dataContext}></TheaterComponent>
             }
-            </VerticalContainer>
-        </StaticPage>
+        </VerticalContainer>
+    </StaticPage>
     );
 };
 
-export default ArchiveComponent;
+export default EntryFeatureComponent;

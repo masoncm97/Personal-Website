@@ -5,7 +5,7 @@ import { StaticPage, ResponsiveContainer } from '../../common/reusable-component
 import '../../styles.css';
 import './home-component.css';
 
-const Home = () => {
+const HomeComponent = () => {
 
     return (
         <StaticPage>
@@ -25,4 +25,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HomeComponent;
